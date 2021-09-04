@@ -60,5 +60,5 @@ RUN cd ../ && dpkg-scanpackages $OS_VERSION | gzip -9c > $OS_VERSION/Packages.gz
 
 FROM nginx:1.19
 
-COPY --from=bionic /ubuntu /usr/share/nginx/html
-COPY --from=focal /ubuntu /usr/share/nginx/html
+COPY --from=bionic /ubuntu /usr/share/nginx/html/ubuntu
+COPY --from=focal /ubuntu /usr/share/nginx/html/ubuntu
