@@ -6,7 +6,7 @@ docker rm bionic &>/dev/null
 docker rmi myrepo:ubuntu &>/dev/null
 rm -rf $(pwd)/ubuntu.tar
 
-DOCKER_BUILDKIT=1 /usr/bin/docker build -t myrepo:ubuntu -o type=tar,dest=$(pwd)/ubuntu.tar -f Dockerfile.ubuntu .
+DOCKER_BUILDKIT=1 docker build -t myrepo:ubuntu -o type=tar,dest=$(pwd)/ubuntu.tar -f Dockerfile.ubuntu .
 echo building is done
 
 set +x
